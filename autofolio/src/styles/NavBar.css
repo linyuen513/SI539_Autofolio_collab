@@ -1,0 +1,9 @@
+.NavBar{
+    background: linear-gradient(#2B7FFF 0%, #155DFC 50%, #432DD7 100%);
+    display: flex;
+}
+
+.logo {
+  height: 3em;
+  padding: 1.2rem;
+}

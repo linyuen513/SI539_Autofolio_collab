@@ -1,0 +1,25 @@
+.HeroSection{
+    margin:8rem;
+}
+.HeroSection h1 {
+    font-family: "Inter", sans-serif;
+    font-size: 63px;
+    font-weight: 400; /* Regular */
+    line-height: 63px; /* same as Figma */
+    letter-spacing: 0.23px;
+    text-align: center;
+    margin: 0;
+    margin-bottom: 1rem;
+}
+.HeroSection p{
+    text-align: center;
+    color: #4A5565;
+
+}
+
+.Title2 {
+    /* linear gradient font color */
+    background: -webkit-linear-gradient(#155dfc, #4f39f6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
