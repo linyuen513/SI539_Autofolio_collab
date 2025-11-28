@@ -26,7 +26,7 @@ h2 {
 }
 
 p {
-  margin-bottom: 2rem;
+  margin-bottom: 1.4rem;
 }
 
 input,
@@ -44,14 +44,14 @@ textarea {
 }
 
 /* --- Skill Tags --- */
-.skills-tags {
+.skills-tags, .tech-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   margin-top: 10px;
 }
 
-.skill-tag {
+.skill-tag, .tech-tag{
   display: inline-flex;
   align-items: center;
   background: #eef1ff;
@@ -103,3 +103,37 @@ textarea {
 .form-group {
   position: relative;
 }
+
+.experienceSection {
+  background-color: #fcfdfd;
+  padding: 20px;
+  border: 1px solid rgb(226, 226, 226);
+  border-radius: 10px;
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.add-experience-btn {
+  background: #4f7cff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.add-experience-btn:hover {
+  background: #3d66e6;
+}
+
+.techSection{
+  margin-bottom: 0px;
+}
+
