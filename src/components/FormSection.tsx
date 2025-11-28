@@ -2,6 +2,18 @@ import "../styles/FormSection.css";
 import { useState } from "react";
 import React from "react";
 import Button from "../components/Button";
+const allSkills = [
+  "Figma",
+  "React",
+  "UI Design",
+  "User Research",
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "TypeScript",
+  "Node.js",
+  "Agile Methodologies",
+];
 
 function FormSection() {
   const [fullName, setFullName] = useState<string>("");
@@ -12,7 +24,24 @@ function FormSection() {
   const [location, setLocation] = useState<string>("");
   const [github, setGithub] = useState<string>("");
   const [linkedIn, setLinkedIn] = useState<string>("");
-  const [skill, setSkill] = useState<string>("");
+  const [inputSkill, setInputSkill] = useState<string>(""); // input skill
+  const [skills, setSkills] = useState<string[]>([]); // skill(tag) you choosed
+
+  const filteredSkills = allSkills.filter((skill) =>
+    skill.toLowerCase().includes(inputSkill.toLowerCase())
+  );
+  function addSkill(skill: string) {
+    if (!skill.trim()) return;
+
+    if (!skills.includes(skill)) {
+      setSkills([...skills, skill]);
+    }
+    setInputSkill(""); // 清空輸入
+  }
+
+  function removeSkill(skill: string) {
+    setSkills(skills.filter((s) => s !== skill));
+  }
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault(); // don't refresh page
@@ -131,26 +160,59 @@ function FormSection() {
             </div>
           </div>
         </section>
-        {/* <!-- Section 3: Skills & Expertise --> */}
+        {/* <!-- Section 3: Skills --> */}
         <section className="formSection">
           <h2>Skills & Expertise</h2>
           <p>What are you great at?</p>
           {/* Skills */}
           <div className="formDiv">
-            <div className="form-group">
+            <div className="form-group full-row">
               <label htmlFor="skill">Skills</label>
-              <input
-                id="skill"
-                type="text"
-                name="skill"
-                value={skill}
-                onChange={(e) => setSkill(e.target.value)}
-                placeholder="e.g., Figma, React, Typography"
-              />
+              <div className="skill-input-wrapper">
+                <input
+                  id="skill"
+                  type="text"
+                  name="skill"
+                  value={inputSkill}
+                  onChange={(e) => setInputSkill(e.target.value)}
+                  placeholder="e.g., Figma, React, Typography"
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      e.preventDefault();
+                      addSkill(inputSkill);
+                    }
+                  }}
+                />
+                {/* filter Dropdown, add skill to skills */}
+                {inputSkill && filteredSkills.length > 0 && (
+                  <div className="skills-dropdown">
+                    {filteredSkills.map((s) => (
+                      <div
+                        key={s}
+                        className="dropdown-item"
+                        onClick={() => addSkill(s)}
+                      >
+                        {s}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+              {/* add tag, remove btn */}
+              <div className="skills-tags">
+                {skills.map((s) => (
+                  <span className="skill-tag" key={s}>
+                    {s}
+                    <button
+                      className="remove-tag"
+                      onClick={() => removeSkill(s)}
+                    >
+                      ✕
+                    </button>
+                  </span>
+                ))}
+              </div>
             </div>
-            <Button className="add-skill-btn" onClick={handleAddSkill}>
-              <span className="plus">+</span> Add Skill
-            </Button>
           </div>
         </section>
       </form>

@@ -31,14 +31,75 @@ p {
 
 input,
 textarea {
-    background-color: rgb(246, 246, 246);
-    border: 1px solid rgb(227, 227, 227);;
-    border-radius: 5px;
-    width: 100%;
-    padding: 10px;
-    color: rgb(144, 144, 144);
+  background-color: rgb(246, 246, 246);
+  border: 1px solid rgb(227, 227, 227);
+  border-radius: 5px;
+  width: 100%;
+  padding: 10px;
+  color: rgb(144, 144, 144);
 }
 
 textarea {
-    min-height: 140px;
+  min-height: 140px;
+}
+
+/* --- Skill Tags --- */
+.skills-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.skill-tag {
+  display: inline-flex;
+  align-items: center;
+  background: #eef1ff;
+  border: 1px solid #d3d9ff;
+  color: #333;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.remove-tag {
+  background: none;
+  border: none;
+  margin-left: 6px;
+  cursor: pointer;
+  color: #666;
+}
+.remove-tag:hover {
+  color: #000;
+}
+
+/* --- Dropdown styling --- */
+/* 包住 input + dropdown */
+.skill-input-wrapper {
+  position: relative;
+}
+
+.skills-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+}
+
+.dropdown-item {
+  padding: 12px 16px;
+  cursor: pointer;
+}
+.dropdown-item:hover {
+  background: #eef4ff;
+}
+
+/* 讓 dropdown 在 grid 裡定位正確 */
+.form-group {
+  position: relative;
 }
