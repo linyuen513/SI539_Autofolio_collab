@@ -1,16 +1,27 @@
 import React from "react";
-import "../styles/Button.css"
 
-type ButtonProps = {
-    children: React.ReactNode;
-    onClick?: () => void;
-    type?: "button" | "submit" | "reset";
-    className?: string;
-};
+interface ButtonProps {
+  type?: "button" | "submit" | "reset";
+  className?: string;
+  onClick?: () => void;
+  disabled?: boolean; // 添加這行
+  children: React.ReactNode;
+}
 
-function Button({ children, onClick, className = "", type = "button" }: ButtonProps) {
+function Button({
+  type = "button",
+  className,
+  onClick,
+  disabled = false,
+  children,
+}: ButtonProps) {
   return (
-    <button type={type} onClick={onClick} className={className}>
+    <button
+      type={type}
+      className={className}
+      onClick={onClick}
+      disabled={disabled} // 添加這行
+    >
       {children}
     </button>
   );

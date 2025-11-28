@@ -44,7 +44,7 @@ function FormSection() {
   const [experiences, setExperiences] = useState<Experience[]>([]);
   const [techInputs, setTechInputs] = useState<{ [key: string]: string }>({});
 
-  // const [isGenerating, setIsGenerating] = useState<boolean>(false);
+  const [isGenerating, setIsGenerating] = useState<boolean>(false);
 
   function addSkill(skill: string) {
     if (!skill.trim()) return;
@@ -127,6 +127,14 @@ function FormSection() {
           : exp
       )
     );
+  }
+  function handleGeneratePortfolio() {
+    setIsGenerating(true);
+    // Simulate portfolio generation
+    setTimeout(() => {
+      setIsGenerating(false);
+      alert("Portfolio generated successfully!");
+    }, 2000);
   }
 
   function handleSubmit(e: React.FormEvent) {
@@ -467,6 +475,36 @@ function FormSection() {
               >
                 + Add Experience
               </button>
+            </div>
+          </div>
+        </section>
+
+        {/* <!-- Section 5: Generate Portfolio --> */}
+        <section className="formSection generate-section">
+          <div className="generate-content">
+            <h2>Ready to Create Your Portfolio?</h2>
+            <p>
+              This will create a personalized portfolio website based on your
+              information
+            </p>
+            <div className="formDiv">
+              <div className="full-row generate-btn-wrap">
+                <Button
+                  type="button"
+                  className={`generate-btn ${isGenerating ? "generating" : ""}`}
+                  onClick={handleGeneratePortfolio}
+                  disabled={isGenerating}
+                >
+                  {isGenerating ? (
+                    <>
+                      <span className="spinner"></span>
+                      Generating Portfolio...
+                    </>
+                  ) : (
+                    <>Generate My Portfolio</>
+                  )}
+                </Button>
+              </div>
             </div>
           </div>
         </section>

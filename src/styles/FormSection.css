@@ -44,14 +44,16 @@ textarea {
 }
 
 /* --- Skill Tags --- */
-.skills-tags, .tech-tags {
+.skills-tags,
+.tech-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
   margin-top: 10px;
 }
 
-.skill-tag, .tech-tag{
+.skill-tag,
+.tech-tag {
   display: inline-flex;
   align-items: center;
   background: #eef1ff;
@@ -74,7 +76,6 @@ textarea {
 }
 
 /* --- Dropdown styling --- */
-/* 包住 input + dropdown */
 .skill-input-wrapper {
   position: relative;
 }
@@ -99,11 +100,7 @@ textarea {
   background: #eef4ff;
 }
 
-/* 讓 dropdown 在 grid 裡定位正確 */
-.form-group {
-  position: relative;
-}
-
+/* Experience Section */
 .experienceSection {
   background-color: #fcfdfd;
   padding: 20px;
@@ -133,7 +130,32 @@ textarea {
   background: #3d66e6;
 }
 
-.techSection{
+.techSection {
   margin-bottom: 0px;
 }
 
+/* generate portfolio */
+
+.generate-btn-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.generate-btn {
+  background: linear-gradient(135deg, #155dfc 0%, #4f39f6 100%);
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 50%;
+  margin: 0 auto;
+  transition: all 0.3s;
+}
+
+.generate-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(79, 124, 255, 0.4);
+}
