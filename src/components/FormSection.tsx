@@ -2,6 +2,8 @@ import "../styles/FormSection.css";
 import { useState } from "react";
 import React from "react";
 import Button from "../components/Button";
+import { useNavigate } from "react-router-dom";
+
 const allSkills = [
   "Figma",
   "React",
@@ -45,6 +47,7 @@ function FormSection() {
   const [techInputs, setTechInputs] = useState<{ [key: string]: string }>({});
 
   const [isGenerating, setIsGenerating] = useState<boolean>(false);
+  const navigate = useNavigate();
 
   function addSkill(skill: string) {
     if (!skill.trim()) return;
@@ -129,12 +132,20 @@ function FormSection() {
     );
   }
   function handleGeneratePortfolio() {
-    setIsGenerating(true);
-    // Simulate portfolio generation
-    setTimeout(() => {
-      setIsGenerating(false);
-      alert("Portfolio generated successfully!");
-    }, 2000);
+    navigate("/portfolio", {
+      state: {
+        fullName,
+        jobTitle,
+        aboutMe,
+        email,
+        phone,
+        location,
+        github,
+        linkedIn,
+        skills,
+        experiences,
+      },
+    });
   }
 
   function handleSubmit(e: React.FormEvent) {
