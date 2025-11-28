@@ -1,4 +1,4 @@
-import NavBar from "../components/Navbar"
+import NavBar from "../components/NavBar"
 import HeroSection from "../components/HeroSection"
 import FormSection from "../components/FormSection"
 
