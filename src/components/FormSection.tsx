@@ -1,6 +1,5 @@
 import "../styles/FormSection.css";
 import { useState } from "react";
-import React from "react";
 import Button from "../components/Button";
 import { useNavigate } from "react-router-dom";
 
@@ -46,7 +45,6 @@ function FormSection() {
   const [experiences, setExperiences] = useState<Experience[]>([]);
   const [techInputs, setTechInputs] = useState<{ [key: string]: string }>({});
 
-  const [isGenerating, setIsGenerating] = useState<boolean>(false);
   const navigate = useNavigate();
 
   function addSkill(skill: string) {
@@ -148,14 +146,9 @@ function FormSection() {
     });
   }
 
-  function handleSubmit(e: React.FormEvent) {
-    e.preventDefault(); // don't refresh page
-    console.log("Submitted:", fullName);
-  }
-
   return (
     <>
-      <form onSubmit={handleSubmit} className="portfolioForm">
+      <form className="portfolioForm">
         {/* <!-- Section 1: Personal Info --> */}
         <section className="formSection">
           <h2>Personal Information</h2>
@@ -502,18 +495,10 @@ function FormSection() {
               <div className="full-row generate-btn-wrap">
                 <Button
                   type="button"
-                  className={`generate-btn ${isGenerating ? "generating" : ""}`}
+                  className="generate-btn"
                   onClick={handleGeneratePortfolio}
-                  disabled={isGenerating}
                 >
-                  {isGenerating ? (
-                    <>
-                      <span className="spinner"></span>
-                      Generating Portfolio...
-                    </>
-                  ) : (
-                    <>Generate My Portfolio</>
-                  )}
+                  Generate My Portfolio
                 </Button>
               </div>
             </div>
