@@ -128,6 +128,27 @@ function FormSection() {
       )
     );
   }
+
+  function isFormValid() {
+    return (
+      // List of required fields
+      fullName &&
+      jobTitle &&
+      aboutMe &&
+      email &&
+      phone &&
+      location &&
+      // Skills and experiences must have at least one item
+      skills.length > 0 &&
+      experiences.length > 0 &&
+      // For each experience,
+      // title, company, startDate, and description must not be empty
+      experiences.every(
+        (exp) => exp.title && exp.company && exp.startDate && exp.description
+      )
+    );
+  }
+
   function handleGeneratePortfolio() {
     navigate("/portfolio", {
       state: {
@@ -155,7 +176,7 @@ function FormSection() {
           {/* Full name */}
           <div className="formDiv">
             <div className="form-group">
-              <label htmlFor="fullName">Full Name</label>
+              <label htmlFor="fullName">Full Name *</label>
               <input
                 id="fullName"
                 type="text"
@@ -163,11 +184,12 @@ function FormSection() {
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
                 placeholder="Your Name"
+                required
               />
             </div>
             {/* Job Title */}
             <div className="form-group">
-              <label htmlFor="jobTitle">Job Title</label>
+              <label htmlFor="jobTitle">Job Title *</label>
               <input
                 id="jobTitle"
                 type="text"
@@ -175,17 +197,19 @@ function FormSection() {
                 value={jobTitle}
                 onChange={(e) => setJobTitle(e.target.value)}
                 placeholder="UI/UX Designer"
+                required
               />
             </div>
             {/* About me */}
             <div className="form-group full-row">
-              <label htmlFor="aboutMe">About Me</label>
+              <label htmlFor="aboutMe">About Me *</label>
               <textarea
                 id="aboutMe"
                 name="aboutMe"
                 value={aboutMe}
                 onChange={(e) => setAboutMe(e.target.value)}
                 placeholder="Share your story, experience, and what makes you unique... "
+                required
               />
             </div>
           </div>
@@ -197,7 +221,7 @@ function FormSection() {
           {/* Email */}
           <div className="formDiv">
             <div className="form-group">
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email">Email *</label>
               <input
                 id="email"
                 type="email"
@@ -205,11 +229,12 @@ function FormSection() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your Email"
+                required
               />
             </div>
             {/* Phone */}
             <div className="form-group">
-              <label htmlFor="phone">Phone</label>
+              <label htmlFor="phone">Phone *</label>
               <input
                 id="phone"
                 type="tel"
@@ -217,11 +242,12 @@ function FormSection() {
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 placeholder="+1 7706269283"
+                required
               />
             </div>
             {/* Location */}
             <div className="form-group">
-              <label htmlFor="location">Location</label>
+              <label htmlFor="location">Location *</label>
               <input
                 id="location"
                 type="text"
@@ -229,6 +255,7 @@ function FormSection() {
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
                 placeholder="Ann Arbor, MI"
+                required
               />
             </div>
             {/* Github URL */}
@@ -344,6 +371,7 @@ function FormSection() {
                           updateExperience(exp.id, "title", e.target.value)
                         }
                         placeholder="Senior UI/UX Designer"
+                        required
                       />
                     </div>
 
@@ -358,12 +386,15 @@ function FormSection() {
                           updateExperience(exp.id, "company", e.target.value)
                         }
                         placeholder="Google"
+                        required
                       />
                     </div>
 
                     {/* Start Date */}
                     <div className="form-group">
-                      <label htmlFor={`startDate-${exp.id}`}>Start Date</label>
+                      <label htmlFor={`startDate-${exp.id}`}>
+                        Start Date *
+                      </label>
                       <input
                         id={`startDate-${exp.id}`}
                         type="month"
@@ -371,6 +402,7 @@ function FormSection() {
                         onChange={(e) =>
                           updateExperience(exp.id, "startDate", e.target.value)
                         }
+                        required
                       />
                     </div>
 
@@ -391,7 +423,7 @@ function FormSection() {
                     {/* Description */}
                     <div className="form-group full-row">
                       <label htmlFor={`description-${exp.id}`}>
-                        Description
+                        Description *
                       </label>
                       <textarea
                         id={`description-${exp.id}`}
@@ -405,6 +437,7 @@ function FormSection() {
                         }
                         placeholder="Describe your responsibilities, achievements, and impact..."
                         rows={3}
+                        required
                       />
                     </div>
 
@@ -496,6 +529,7 @@ function FormSection() {
                   type="button"
                   className="generate-btn"
                   onClick={handleGeneratePortfolio}
+                  disabled={!isFormValid()}
                 >
                   Generate My Portfolio
                 </button>
