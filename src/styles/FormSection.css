@@ -1,5 +1,3 @@
-.portfolioForm {
-}
 .formSection {
   margin: 0 10rem 3rem 10rem;
 }
@@ -158,4 +156,15 @@ textarea {
 .generate-btn:hover {
   transform: translateY(-2px);
   box-shadow: 0 6px 24px rgba(79, 124, 255, 0.4);
+}
+
+.generate-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.generate-btn:disabled:hover {
+  transform: none;
+  cursor: not-allowed;
+  box-shadow: none;
 }
