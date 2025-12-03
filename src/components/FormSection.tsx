@@ -170,7 +170,7 @@ function FormSection() {
                 name="fullName"
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
-                placeholder="Anne Lin"
+                placeholder="Your Name"
               />
             </div>
             {/* Job Title */}
@@ -205,14 +205,14 @@ function FormSection() {
           {/* Email */}
           <div className="formDiv">
             <div className="form-group">
-              <label htmlFor="email">Full Name</label>
+              <label htmlFor="email">Email</label>
               <input
                 id="email"
-                type="text"
+                type="email"
                 name="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Anne Lin"
+                placeholder="Your Email"
               />
             </div>
             {/* Phone */}
