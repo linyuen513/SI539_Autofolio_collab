@@ -1,6 +1,5 @@
 import "../styles/FormSection.css";
 import { useState } from "react";
-import Button from "../components/Button";
 import { useNavigate } from "react-router-dom";
 
 const allSkills = [
@@ -493,13 +492,13 @@ function FormSection() {
             </p>
             <div className="formDiv">
               <div className="full-row generate-btn-wrap">
-                <Button
+                <button
                   type="button"
                   className="generate-btn"
                   onClick={handleGeneratePortfolio}
                 >
                   Generate My Portfolio
-                </Button>
+                </button>
               </div>
             </div>
           </div>
