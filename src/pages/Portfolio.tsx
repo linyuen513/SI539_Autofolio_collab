@@ -33,9 +33,6 @@ function Portfolio() {
     <div className="portfolio-container">
       {/* Navigation Bar */}
       <nav className="portfolio-nav">
-        <div className="nav-brand">
-          <img src="/profile-avatar.jpg" alt="Profile" className="nav-avatar" />
-        </div>
         <ul className="nav-links">
           <li>
             <button
@@ -80,42 +77,37 @@ function Portfolio() {
           <div className="hero-content">
             <div className="hero-text">
               <h1 className="hero-title">
-                <span className="name">{state.fullName}</span>
+                <span className="name">
+                  Hi there, my name is {state.fullName}.
+                </span>
                 <br />
-                <span className="role-1">DIGITAL</span>
+                <span className="role-1"> I am a </span>
                 <br />
-                <span className="role-2">DESIGNER</span>
+                <span className="role-2">{state.jobTitle}</span>
               </h1>
-              <div className="hero-badge">
-                <span>👋</span>
-              </div>
-            </div>
-            <div className="hero-image">
-              <img src="/profile-photo.jpg" alt={state.fullName} />
-            </div>
-            <div className="hero-description">
-              <p>{state.aboutMe}</p>
             </div>
           </div>
         </section>
 
         {/* About Section */}
         <section id="about" className="about-section">
-          <div className="section-badge">●</div>
           <h2 className="section-title">ABOUT ME</h2>
           <div className="about-content">
             <div className="about-text">
               <p>{state.aboutMe}</p>
-              <div className="about-stats">
-                <div className="stat">
-                  <h3>{state.experiences.length}</h3>
-                  <p>Years of Experience</p>
-                </div>
-                <div className="stat">
-                  <h3>{state.experiences.length}</h3>
-                  <p>Completed Projects</p>
-                </div>
+            </div>
+              
+              
+            <div className="about-stats">
+              <div className="stat">
+                <h3>{state.experiences.length}</h3>
+                <p>Years of Experience</p>
               </div>
+              <div className="stat">
+                <h3>{state.experiences.length}</h3>
+                <p>Completed Projects</p>
+              </div>
+            </div>
               <div className="contact-info">
                 <div className="contact-item">
                   <strong>Call Today :</strong>
@@ -126,12 +118,8 @@ function Portfolio() {
                   <span>{state.email}</span>
                 </div>
               </div>
-              <button className="story-btn">MY STORY</button>
+              {/* <button className="story-btn">MY STORY</button> */}
             </div>
-            <div className="about-image">
-              <img src="/about-photo.jpg" alt="About me" />
-            </div>
-          </div>
         </section>
 
         {/* Skills Section */}
@@ -182,7 +170,7 @@ function Portfolio() {
                   <div className="project-overlay">
                     <h3 className="project-title">{exp.title}</h3>
                     <p className="project-subtitle">REDESIGN</p>
-                    <div className="project-arrow">↗</div>
+                    {/* <div className="project-arrow">↗</div> */}
                   </div>
                 </div>
                 <div className="project-hover-info">
