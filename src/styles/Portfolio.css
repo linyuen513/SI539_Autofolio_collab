@@ -152,7 +152,7 @@
 }
 
 /* Section Styling */
-.section {
+.portfolio-container section {
   min-height: 100vh;
   padding: 100px 5%;
   max-width: 1400px;
