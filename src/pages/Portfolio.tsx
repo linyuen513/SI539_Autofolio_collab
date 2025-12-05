@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 import type { Experience } from "../lib/types";
 import "../styles/Portfolio.css";
 
+// Code for later usage
 // function generateWhatICanDo(
 //   jobTitle: string,
 //   skills: string[],
