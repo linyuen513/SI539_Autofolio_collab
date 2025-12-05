@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import "../styles/Portfolio.css";
 
@@ -96,8 +96,7 @@ function Portfolio() {
             <div className="about-text">
               <p>{state.aboutMe}</p>
             </div>
-              
-              
+
             <div className="about-stats">
               <div className="stat">
                 <h3>{state.experiences.length}</h3>
@@ -108,18 +107,18 @@ function Portfolio() {
                 <p>Completed Projects</p>
               </div>
             </div>
-              <div className="contact-info">
-                <div className="contact-item">
-                  <strong>Call Today :</strong>
-                  <span>{state.phone}</span>
-                </div>
-                <div className="contact-item">
-                  <strong>Email :</strong>
-                  <span>{state.email}</span>
-                </div>
+            <div className="contact-info">
+              <div className="contact-item">
+                <strong>Call Today :</strong>
+                <span>{state.phone}</span>
               </div>
-              {/* <button className="story-btn">MY STORY</button> */}
+              <div className="contact-item">
+                <strong>Email :</strong>
+                <span>{state.email}</span>
+              </div>
             </div>
+            {/* <button className="story-btn">MY STORY</button> */}
+          </div>
         </section>
 
         {/* Skills Section */}
