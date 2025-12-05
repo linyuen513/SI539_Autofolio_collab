@@ -1,17 +1,7 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
+import type { Experience } from "../lib/types";
 import "../styles/Portfolio.css";
-
-interface Experience {
-  id: string;
-  title: string;
-  company: string;
-  startDate: string;
-  endDate: string;
-  description: string;
-  technologies: string[];
-}
-
 
 // function generateWhatICanDo(
 //   jobTitle: string,
@@ -153,7 +143,7 @@ function Portfolio() {
                 (skill: string, i: number) => {
                   return (
                     <div className="skill-card" key={skill + i}>
-                        <div className="skill-name">{skill}</div>
+                      <div className="skill-name">{skill}</div>
                     </div>
                   );
                 }
