@@ -1,30 +1,8 @@
 import "../styles/FormSection.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
-const allSkills = [
-  "Figma",
-  "React",
-  "UI Design",
-  "User Research",
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "TypeScript",
-  "Node.js",
-  "Agile Methodologies",
-];
-
-// Add Experience interface
-interface Experience {
-  id: string;
-  title: string;
-  company: string;
-  startDate: string;
-  endDate: string;
-  description: string;
-  technologies: string[];
-}
+import type { Experience } from "../lib/types";
+import { allSkills } from "../lib/contents";
 
 function FormSection() {
   const [fullName, setFullName] = useState<string>("");

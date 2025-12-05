@@ -1,16 +1,7 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
+import type { Experience } from "../lib/types";
 import "../styles/Portfolio.css";
-
-interface Experience {
-  id: string;
-  title: string;
-  company: string;
-  startDate: string;
-  endDate: string;
-  description: string;
-  technologies: string[];
-}
 
 function Portfolio() {
   const { state } = useLocation();
