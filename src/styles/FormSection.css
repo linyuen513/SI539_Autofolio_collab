@@ -34,7 +34,6 @@ textarea {
   border-radius: 5px;
   width: 100%;
   padding: 10px;
-  color: rgb(144, 144, 144);
 }
 
 textarea {
@@ -114,7 +113,7 @@ textarea {
 }
 
 .add-experience-btn {
-  background: #4f7cff;
+  background: #2b60fe;
   color: white;
   border: none;
   padding: 10px 20px;
