@@ -12,6 +12,30 @@ interface Experience {
   technologies: string[];
 }
 
+
+// function generateWhatICanDo(
+//   jobTitle: string,
+//   skills: string[],
+//   experiences: any[]
+// ) {
+//   const topSkills = skills.slice(0, 3).join(", ");
+
+//   const role = jobTitle || "designer / developer";
+
+//   const projectCount = experiences.length;
+
+//   return `
+//     As a ${role}, I specialize in turning ideas into clear, intuitive, and high-impact digital experiences.
+//     I work with tools like ${topSkills} to design, iterate, and deliver solutions that make products easier
+//     and more enjoyable to use.
+
+//     With hands-on experience from ${projectCount} project${
+//     projectCount > 1 ? "s" : ""
+//   },
+//     I bridge design and development to bring both clarity and execution to any team.
+//   `;
+// }
+
 function Portfolio() {
   const { state } = useLocation();
   const [activeSection, setActiveSection] = useState("home");
@@ -106,8 +130,6 @@ function Portfolio() {
                 <h3>{state.experiences.length}</h3>
                 <p>Completed Projects</p>
               </div>
-            </div>
-            <div className="contact-info">
               <div className="contact-item">
                 <strong>Call Today :</strong>
                 <span>{state.phone}</span>
@@ -123,13 +145,33 @@ function Portfolio() {
 
         {/* Skills Section */}
         <section id="skills" className="skills-section">
-          <div className="section-badge">●</div>
+          <h2 className="section-title">Skills</h2>
+
+          <div className="skills-content">
+            <div className="skills-grid">
+              {(state.skills && state.skills.length ? state.skills : []).map(
+                (skill: string, i: number) => {
+                  return (
+                    <div className="skill-card" key={skill + i}>
+                        <div className="skill-name">{skill}</div>
+                    </div>
+                  );
+                }
+              )}
+            </div>
+          </div>
+        </section>
+
+        {/* Service Section */}
+        {/* <section id="skills" className="skills-section">
           <h2 className="section-title">WHAT I CAN DO FOR YOU</h2>
           <div className="skills-content">
             <p className="skills-description">
-              As a digital designer with a technical edge, I bring together user
-              research, interface design, and frontend development to turn
-              complex ideas into intuitive, engaging products.
+              {generateWhatICanDo(
+                state.jobTitle,
+                state.skills,
+                state.experiences
+              )}
             </p>
             <div className="skills-list">
               {state.skills.map((skill: string, index: number) => (
@@ -141,11 +183,10 @@ function Portfolio() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Featured Projects Section */}
         <section id="experience" className="projects-section">
-          <div className="section-badge">●</div>
           <h2 className="section-title">FEATURED PROJECTS</h2>
           <p className="section-description">
             These selected projects showcase my process-driven approach to
