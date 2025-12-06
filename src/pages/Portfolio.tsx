@@ -82,7 +82,6 @@ function Portfolio() {
             </button>
           </li>
         </ul>
-        <button className="contact-btn">Contact</button>
       </nav>
 
       {/* Main Content */}
@@ -178,29 +177,20 @@ function Portfolio() {
 
         {/* Featured Projects Section */}
         <section id="experience" className="projects-section">
-          <h2 className="section-title">FEATURED PROJECTS</h2>
-          <p className="section-description">
+          <h2 className="section-title">Experiences</h2>
+          {/* <p className="section-description">
             These selected projects showcase my process-driven approach to
             design — using research, visual storytelling, and frontend
             implementation to solve real-world problems across public service
             and commercial domains.
-          </p>
+          </p> */}
 
           <div className="projects-grid">
             {state.experiences.map((exp: Experience) => (
               <div key={exp.id} className="project-card">
                 <div className="project-image">
-                  <div className="project-mockups">
-                    {/* Placeholder for project images */}
-                    <div className="mockup-phone">📱</div>
-                    <div className="mockup-phone">📱</div>
-                    <div className="mockup-phone">📱</div>
-                    <div className="mockup-phone">📱</div>
-                    <div className="mockup-phone">📱</div>
-                  </div>
                   <div className="project-overlay">
                     <h3 className="project-title">{exp.title}</h3>
-                    <p className="project-subtitle">REDESIGN</p>
                     {/* <div className="project-arrow">↗</div> */}
                   </div>
                 </div>
@@ -209,7 +199,7 @@ function Portfolio() {
                     {exp.title} @ {exp.company}
                   </h4>
                   <p className="project-dates">
-                    {exp.startDate} — {exp.endDate}
+                    {exp.startDate} ~ {exp.endDate}
                   </p>
                   <p className="project-description">{exp.description}</p>
                   <div className="project-tech">
