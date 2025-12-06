@@ -190,7 +190,7 @@ function Portfolio() {
               <div key={exp.id} className="project-card">
                 <div className="project-image">
                   <div className="project-overlay">
-                    <h3 className="project-title">{exp.title}</h3>
+                    <h3 className="project-title">{exp.company}</h3>
                     {/* <div className="project-arrow">↗</div> */}
                   </div>
                 </div>
