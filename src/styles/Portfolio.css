@@ -384,6 +384,12 @@
   justify-content: center;
 }
 
+.project-hover-info h4 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
 .project-card:hover .project-hover-info {
   opacity: 1;
 }
