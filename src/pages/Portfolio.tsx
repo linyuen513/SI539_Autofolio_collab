@@ -34,6 +34,7 @@ function Portfolio() {
   // Ensure the portfolio page starts at the top when navigated to
   useEffect(() => {
     window.scrollTo(0, 0);
+    console.log(state);
   }, []);
 
   if (!state) {
@@ -119,7 +120,7 @@ function Portfolio() {
             <div className="about-stats">
               <div className="stat">
                 <h3>{state.experiences.length}</h3>
-                <p>Years of Experience</p>
+                <p>Different Work Experiences</p>
               </div>
               <div className="stat">
                 <h3>{state.experiences.length}</h3>
