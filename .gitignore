@@ -1,0 +1,40 @@
+# Node / Vite build output
+dist/
+.vite/
+
+# Node dependencies
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Editor & OS junk
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# TypeScript
+*.tsbuildinfo
+
+# Environment & local config
+.env
+.env.*
+!.env.example
+
+# Coverage / test output
+coverage/
+*.lcov
+
+# Misc
+*.log
+
+# Custom
+TODO
+
