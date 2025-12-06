@@ -362,14 +362,6 @@
   color: #666;
 }
 
-.project-arrow {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 2rem;
-  color: #4ade80;
-}
-
 .project-hover-info {
   position: absolute;
   top: 0;
@@ -384,7 +376,7 @@
   transition: opacity 0.3s ease;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  overflow-y: auto;
 }
 
 .project-hover-info h4 {

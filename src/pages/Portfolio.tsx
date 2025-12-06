@@ -193,12 +193,13 @@ function Portfolio() {
           <div className="projects-grid">
             {state.experiences.map((exp: Experience) => (
               <div key={exp.id} className="project-card">
+                {/* Card overlay */}
                 <div className="project-image">
                   <div className="project-overlay">
                     <h3 className="project-title">{exp.company}</h3>
-                    {/* <div className="project-arrow">↗</div> */}
                   </div>
                 </div>
+                {/* Card hover info */}
                 <div className="project-hover-info">
                   <h4>
                     {exp.title} @ {exp.company}
