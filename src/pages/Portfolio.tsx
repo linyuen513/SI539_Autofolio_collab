@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import type { Experience } from "../lib/types";
 import "../styles/Portfolio.css";
@@ -30,6 +30,11 @@ import "../styles/Portfolio.css";
 function Portfolio() {
   const { state } = useLocation();
   const [activeSection, setActiveSection] = useState("home");
+
+  // Ensure the portfolio page starts at the top when navigated to
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (!state) {
     return <p>No portfolio data found.</p>;
