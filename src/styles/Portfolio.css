@@ -247,6 +247,13 @@
   font-size: 1rem;
 }
 
+.skill-tag .tech-tag{
+  background: #eef1ff;
+  border: 1px solid #d3d9ff;
+  padding: 5px 12px;
+  border-radius: 15px;
+  font-size: 0.9rem;
+}
 /* skills section v1 */
 /* .skills-description {
   font-size: 1.2rem;
@@ -412,14 +419,13 @@
   
 }
 
-.tech-tag {
-  background-color: #cadef5;
-  border: none;
+.tech-tag{
+  background: #eef1ff;
+  border: 1px solid #d3d9ff;
   padding: 5px 12px;
   border-radius: 15px;
   font-size: 0.9rem;
 }
-
 /* Responsive Design */
 @media (max-width: 1024px) {
   .hero-content {
