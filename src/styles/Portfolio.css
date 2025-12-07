@@ -393,6 +393,15 @@
   font-size: 0.9rem;
 }
 
+.footer {
+  background: transparent;
+  padding: 20px;
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 20px;
+  color: #666;
+}
+
 /* Responsive layout tweaks (mobile first) */
 @media (min-width: 768px) {
   .portfolio-nav {
@@ -417,5 +426,11 @@
 
   .project-image {
     height: 400px;
+  }
+
+  .footer {
+    padding: 40px;
+    font-size: 1.2rem;
+    border-radius: 20px;
   }
 }

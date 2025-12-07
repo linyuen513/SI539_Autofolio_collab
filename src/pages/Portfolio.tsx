@@ -223,6 +223,9 @@ function Portfolio() {
           </div>
         </section>
       </main>
+      <footer className="footer">
+        &copy; {new Date().getFullYear()} {state.fullName}. All rights reserved.
+      </footer>
     </div>
   );
 }
