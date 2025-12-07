@@ -118,6 +118,12 @@ textarea {
   margin-bottom: 2rem;
 }
 
+.experience-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
 .add-experience-btn {
   background: #2b60fe;
   color: white;

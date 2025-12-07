@@ -333,7 +333,7 @@ function FormSection() {
                   </button>
                 </div>
 
-                <div>
+                <div className="experience-content">
                   {/* Job Title */}
                   <div className="form-group">
                     <label htmlFor={`title-${exp.id}`}>Job Title *</label>
