@@ -269,7 +269,7 @@ function FormSection() {
         <div className="formDiv">
           <div className="form-group full-row">
             <label htmlFor="skill">Skills</label>
-            <div className="skill-input-wrapper">
+            <div className="skill-input-wrapper form-group">
               <input
                 id="skill"
                 type="text"
