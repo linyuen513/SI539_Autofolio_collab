@@ -1,12 +1,7 @@
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-} */
-
 .portfolio-container {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   background: linear-gradient(135deg, #ffeef8 0%, #f0e6ff 100%);
+  padding: 0 5%;
 }
 
 /* Navigation */
@@ -18,23 +13,15 @@
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(10px);
   border-radius: 50px;
-  padding: 10px 20px;
+  padding: 5px 10px;
   display: flex;
-  align-items: center;
   z-index: 1000;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
-/* .nav-avatar {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  object-fit: cover;
-} */
-
 .nav-links {
   display: flex;
-  gap: 25px;
+  gap: 10px;
   list-style: none;
   padding-left: 0;
 }
@@ -43,7 +30,7 @@
   background: none;
   border: none;
   color: #666;
-  font-size: 16px;
+  font-size: 15px;
   cursor: pointer;
   padding: 8px 12px;
   transition: color 0.3s;
@@ -57,38 +44,26 @@
   transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-/* .contact-btn {
-  background: #333;
-  color: white;
-  border: none;
-  padding: 12px 24px;
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background 0.3s;
-} */
-
-/* .contact-btn:hover {
-  background: #555;
-} */
-
 /* Main Content */
 .portfolio-main {
   padding-top: 100px;
 }
 
+.portfolio-main > *:nth-child(n+2) {
+  /* Custom styles for all direct children of .portfolio-main except the first */
+  margin-top: 100px;
+}
+
+
 /* Hero Section */
 .hero-section {
-  /* min-height: 100vh; */
   display: grid;
   place-items: center;
-  padding: 0 5%;
 }
 
 .hero-content {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-areas: "text image description";
+  /* display: grid;
+  grid-template-columns: 1fr; */
   align-items: center;
   gap: 60px;
   max-width: 1400px;
@@ -101,6 +76,9 @@
 }
 
 .hero-title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
   font-size: clamp(2.5rem, 6vw, 4rem);
   font-weight: 700;
   line-height: 0.9;
@@ -119,7 +97,7 @@
 
 .role-2 {
   color: #4ade80;
-  font-size: 6rem;
+  font-size: 4rem;
 }
 
 .hero-description {
@@ -131,7 +109,6 @@
 
 /* Section Styling */
 .portfolio-container section {
-  padding: 100px 10%;
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -145,8 +122,8 @@
 
 /* About Section */
 .about-content {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  /* display: grid;
+  grid-template-columns: repeat(4, 1fr); */
   font-size: 1.1rem;
   line-height: 1.6;
   color: #666;
@@ -304,12 +281,6 @@
   max-width: 800px;
 }
 
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-  gap: 40px;
-}
-
 .project-card {
   position: relative;
   cursor: pointer;
@@ -320,9 +291,17 @@
   transform: translateY(-10px);
 }
 
+.projects-grid {
+  display: grid;
+  /* Mobile-first: single-column layout to avoid horizontal overflow */
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
 .project-image {
   position: relative;
-  height: 400px;
+  /* Mobile-first: shorter cards on small screens */
+  height: 280px;
   background: rgba(255, 255, 255, 0.8);
   border-radius: 20px;
   overflow: hidden;
@@ -404,7 +383,6 @@
   flex-wrap: wrap;
   gap: 8px;
   margin-top: 10px;
-  
 }
 
 .tech-tag{
@@ -414,44 +392,30 @@
   border-radius: 15px;
   font-size: 0.9rem;
 }
-/* Responsive Design */
-@media (max-width: 1024px) {
-  .hero-content {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "text"
-      "image"
-      "description";
-    gap: 40px;
-  }
 
-  .about-content {
-    grid-template-columns: 1fr;
-    gap: 40px;
+/* Responsive layout tweaks (mobile first) */
+@media (min-width: 768px) {
+  .portfolio-nav {
+    padding: 10px 20px;
+  }
+  
+  .nav-links {
+    gap: 20px;
+  }
+  
+  .nav-links button {
+    font-size: 18px;
+  }
+  
+  .role-2 {
+    font-size: 6rem;
   }
 
   .projects-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 768px) {
-  .portfolio-nav {
-    padding: 8px 15px;
-    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   }
 
-  .nav-links {
-    gap: 15px;
-  }
-
-  .hero-image img,
-  .about-image img {
-    height: 350px;
-  }
-
-  .about-stats {
-    flex-direction: column;
-    gap: 20px;
+  .project-image {
+    height: 400px;
   }
 }

@@ -97,13 +97,11 @@ function Portfolio() {
           <div className="hero-content">
             <div className="hero-text">
               <h1 className="hero-title">
-                <span className="name">
-                  Hi there, my name is {state.fullName}.
-                </span>
-                <br />
-                <span className="role-1"> I am a </span>
-                <br />
-                <span className="role-2">{state.jobTitle}</span>
+                <p className="name">
+                  Hi there, my name is <strong>{state.fullName}</strong>.
+                </p>
+                <p className="role-1"> I am a </p>
+                <p className="role-2">{state.jobTitle}</p>
               </h1>
             </div>
           </div>
