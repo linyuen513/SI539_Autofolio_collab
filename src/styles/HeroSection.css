@@ -1,5 +1,6 @@
 .HeroSection {
-  margin: 8rem;
+  /* margin: 8rem; */
+  margin: 8rem 2rem;
 }
 .HeroSection h1 {
   font-family: "Inter", sans-serif;
@@ -17,8 +18,5 @@
 }
 
 .Title2 {
-  /* linear gradient font color */
-  background: -webkit-linear-gradient(#155dfc, #4f39f6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: #0e58f9;
 }
