@@ -1,0 +1,24 @@
+.Footer {
+  background: linear-gradient(#2b7fff 0%, #155dfc 50%, #432dd7 100%);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  padding: 1rem 1.2rem;
+  margin-top: 2rem;
+  font-size: 0.85rem;
+}
+
+.Footer p {
+  margin: 0;
+}
+
+a {
+    color: white;
+}
+
+a:hover {
+    color: #d2d9e6;
+}

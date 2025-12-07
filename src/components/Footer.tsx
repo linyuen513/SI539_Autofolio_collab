@@ -2,8 +2,19 @@ import "../styles/Footer.css";
 
 function Footer() {
   return (
-    <footer>
-      © {new Date().getFullYear()} My Portfolio App
+    <footer className="Footer">
+      <p>© {new Date().getFullYear()} Autofolio, All rights reserved.</p>
+      <p>
+        Made by{" "}
+        <a href="https://dongsubkim.com" target="_blank" rel="noreferrer">
+          Dongsub Kim
+        </a>
+        ,{" "}
+        <a href="https://linyuen.framer.website/" target="_blank" rel="noreferrer">
+          Anne Lin
+        </a>
+        .
+      </p>
     </footer>
   );
 }
