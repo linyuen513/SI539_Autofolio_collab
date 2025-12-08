@@ -249,7 +249,7 @@ function FormSection() {
           </div>
           {/* LinkedIn URL */}
           <div className="form-group">
-            <label htmlFor="github">LinkedIn URL</label>
+            <label htmlFor="linkedIn">LinkedIn URL</label>
             <input
               id="linkedIn"
               type="url"
