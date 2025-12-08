@@ -4,6 +4,18 @@
   padding: 0 5%;
 }
 
+.skip-to-main {
+  position: absolute;
+  top: -100px;
+}
+
+.skip-to-main:focus {
+  top: 20px;
+  background: white;
+  color: black;
+  padding: 10px 20px;
+}
+
 /* Navigation */
 .portfolio-nav {
   position: fixed;
@@ -272,7 +284,7 @@
   color: #666;
 } */
 
-/* Projects Section */
+/* experiences Section */
 .section-description {
   font-size: 1.1rem;
   line-height: 1.6;
@@ -281,24 +293,24 @@
   max-width: 800px;
 }
 
-.project-card {
+.experience-card {
   position: relative;
   cursor: pointer;
   transition: transform 0.3s ease;
 }
 
-.project-card:hover {
+.experience-card:hover {
   transform: translateY(-10px);
 }
 
-.projects-grid {
+.experiences-grid {
   display: grid;
   /* Mobile-first: single-column layout to avoid horizontal overflow */
   grid-template-columns: 1fr;
   gap: 40px;
 }
 
-.project-image {
+.experience-image {
   position: relative;
   /* Mobile-first: shorter cards on small screens */
   height: 280px;
@@ -310,7 +322,7 @@
   justify-content: center;
 }
 
-.project-mockups {
+.experience-mockups {
   display: flex;
   gap: 10px;
   opacity: 0.3;
@@ -321,7 +333,7 @@
   opacity: 0.7;
 }
 
-.project-overlay {
+.experience-overlay {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -330,18 +342,18 @@
   color: #333;
 }
 
-.project-title {
+.experience-title {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 10px;
 }
 
-.project-subtitle {
+.experience-subtitle {
   font-size: 1.2rem;
   color: #666;
 }
 
-.project-hover-info {
+.experience-hover-info {
   position: absolute;
   top: 0;
   left: 0;
@@ -358,22 +370,22 @@
   overflow-y: auto;
 }
 
-.project-hover-info h4 {
+.experience-hover-info h4 {
   font-size: 2rem;
   font-weight: 700;
-  /* margin-bottom: 10px; */
 }
 
-.project-card:hover .project-hover-info {
+.experience-card:hover .experience-hover-info,
+.experience-card:focus-within .experience-hover-info {
   opacity: 1;
 }
 
-.project-dates {
+.experience-dates {
   margin: 10px 0;
   opacity: 0.8;
 }
 
-.project-description {
+.experience-description {
   margin: 20px 0;
   line-height: 1.6;
 }
@@ -420,11 +432,11 @@
     font-size: 6rem;
   }
 
-  .projects-grid {
+  .experiences-grid {
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   }
 
-  .project-image {
+  .experience-image {
     height: 400px;
   }
 

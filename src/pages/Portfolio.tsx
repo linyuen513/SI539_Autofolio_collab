@@ -52,6 +52,21 @@ function Portfolio() {
 
   return (
     <div className="portfolio-container">
+      {/* Skip to Main Content */}
+      <a
+        className="skip-to-main"
+        tabIndex={0}
+        role="button"
+        onClick={() => scrollToSection("home")}
+        onKeyDown={(event) => {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            scrollToSection("home");
+          }
+        }}
+      >
+        Skip to Main Content
+      </a>
       {/* Navigation Bar */}
       <nav className="portfolio-nav">
         <ul className="nav-links">
@@ -93,7 +108,7 @@ function Portfolio() {
       {/* Main Content */}
       <main className="portfolio-main">
         {/* Hero Section */}
-        <section id="home" className="hero-section">
+        <section id="home" className="hero-section" tabIndex={0}>
           <div className="hero-content">
             <div className="hero-text">
               <h1 className="hero-title">
@@ -108,7 +123,7 @@ function Portfolio() {
         </section>
 
         {/* About Section */}
-        <section id="about" className="about-section">
+        <section id="about" className="about-section" tabIndex={0}>
           <h2 className="section-title">ABOUT ME</h2>
           <div className="about-content">
             <div className="about-text">
@@ -138,7 +153,7 @@ function Portfolio() {
         </section>
 
         {/* Skills Section */}
-        <section id="skills" className="skills-section">
+        <section id="skills" className="skills-section" tabIndex={0}>
           <h2 className="section-title">Skills</h2>
 
           <div className="skills-content">
@@ -179,39 +194,39 @@ function Portfolio() {
           </div>
         </section> */}
 
-        {/* Featured Projects Section */}
-        <section id="experience" className="projects-section">
+        {/* Featured Experiences Section */}
+        <section id="experience" className="experiences-section" tabIndex={0}>
           <h2 className="section-title">Experiences</h2>
           {/* <p className="section-description">
-            These selected projects showcase my process-driven approach to
+            These selected experiencess showcase my process-driven approach to
             design — using research, visual storytelling, and frontend
             implementation to solve real-world problems across public service
             and commercial domains.
           </p> */}
 
-          <div className="projects-grid">
+          <div className="experiences-grid">
             {state.experiences.map((exp: Experience) => (
-              <div key={exp.id} className="project-card">
+              <div key={exp.id} className="experience-card" tabIndex={0}>
                 {/* Card overlay */}
-                <div className="project-image">
-                  <div className="project-overlay">
-                    <h3 className="project-title">{exp.company}</h3>
+                <div className="experience-image">
+                  <div className="experience-overlay">
+                    <h3 className="experience-title">{exp.company}</h3>
                   </div>
                 </div>
                 {/* Card hover info */}
-                <div className="project-hover-info">
-                  <h4>
+                <div className="experience-hover-info">
+                  <h4 tabIndex={0}>
                     {exp.title} @ {exp.company}
                   </h4>
-                  <p className="project-dates">
+                  <p className="experience-dates" tabIndex={0}>
                     {exp.startDate} ~ {exp.endDate}
                   </p>
-                  <p className="project-description">{exp.description}</p>
-                  <div className="project-tech">
+                  <p className="experience-description" tabIndex={0}>{exp.description}</p>
+                  <div className="experience-tech" tabIndex={0}>
                     <strong>Technologies:</strong>
                     <div className="tech-tags">
                       {exp.technologies.map((tech: string) => (
-                        <span key={tech} className="tech-tag">
+                        <span key={tech} className="tech-tag" tabIndex={0}>
                           {tech}
                         </span>
                       ))}
