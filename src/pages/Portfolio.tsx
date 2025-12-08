@@ -34,7 +34,6 @@ function Portfolio() {
   // Ensure the portfolio page starts at the top when navigated to
   useEffect(() => {
     window.scrollTo(0, 0);
-    console.log(state);
   }, []);
 
   if (!state) {
